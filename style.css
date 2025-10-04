@@ -1,0 +1,173 @@
+/* 색 타입 기본값 */
+:root{
+  --bg: #fdfaf4;
+  --panel: #85ba6c;
+  --ink: #ffffff;
+  --accent: #ea6c86;
+  --accent-weak:#FFB8C7
+;
+  --maxw: 960px;
+}
+
+html { scroll-behavior: smooth; }
+* { box-sizing: border-box; }
+
+body{
+  margin: 0;
+  color: var(--ink);
+  background-color: #fdfaf4; /* 기본 바탕색 */
+  background-image: radial-gradient(rgba(0, 0, 0, 0.08) 3px, transparent 3px);
+  background-size: 40px 40px;
+  padding: 10rem 0 15rem;
+  font-family: "Yusei Magic", sans-serif;
+  line-height: 1.7;
+}
+  color: var(--ink);
+  background: var(--bg);
+  font-family: "Yusei Magic", sans-serif;
+  line-height: 1.7;
+}
+
+.container{
+  width: min(var(--maxw), 92vw);
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+
+
+
+
+/* 헤더 */
+.site-header{
+   background-color: #fdfaf4;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.08) 3px, transparent 3px);
+  background-size: 40px 40px;
+  padding: 10rem 0 15rem;
+  text-align: center;
+}
+
+.site-title{
+  color: #000000; /* 검은색 */
+  font-family: "Yusei Magic", sans-serif;
+  font-weight: 700;
+  font-synthesis-weight: none;
+  letter-spacing: 0.08em;
+  font-size: clamp(3rem, 9.5vw, 9.5rem);
+  margin: 0;
+}
+
+.site-desc{
+  margin: 0.6rem 0 0;
+  color: #a5a195;
+}
+
+
+
+
+/* 상단 내비(고정) */
+.day-nav{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fdfaf4;
+  border-bottom: 1px solid #e8d9c8;
+}
+.day-nav .container{
+  display: flex;
+  gap: .5rem;
+  justify-content: flex-end;
+  padding: .5rem 0.25rem;
+}
+.day-nav a{
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: .9rem;
+  color: white;
+  background: var(--accent);
+  border: 2px solid #f6be99;
+  padding: .35rem .6rem;
+  border-radius: .4rem;
+  box-shadow: 0 2px 0 #ffffba;
+}
+.day-nav a:hover{ filter: brightness(1.05); }
+.day-nav a:active{ transform: translateY(1px); box-shadow: 0 1px 0 #6f472c; }
+
+
+
+/* 본문(일자 섹션) */
+.day{
+  padding: 2.2rem 0 1.6rem;
+  scroll-margin-top: 5.5rem; /* 내비 높이만큼 앵커 여유 */
+}
+.day-title{
+  font-family: "Yusei Magic", sans-serif;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-align: center;
+  margin: 0 0 1.2rem;
+  font-size: clamp(1.2rem, 2.6vw, 1.8rem);
+  color: var(--accent);
+}
+
+
+
+/* 사진  */
+.photo{
+  background: var(--panel);
+  border-radius: 1.6rem;
+  padding: 1rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,.06);
+  width: min(820px, 100%);
+  margin: 0 auto 1.2rem;
+}
+.photo img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1.2rem;
+}
+.photo figcaption{
+  margin-top: .7rem;
+  text-align: center;
+  color: #725c4f;
+  font-size: 0.95rem;
+}
+
+
+
+
+/* 구분선 */
+.rule{
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #dcc6b2, transparent);
+  margin: 1.8rem auto 0;
+  width: min(760px, 90%);
+}
+
+
+
+/* 푸터 */
+.site-footer{
+  margin: 3rem 0 2rem;
+  text-align: center;
+  color: #a3c4f3;
+}
+
+
+
+/* 반응형 미디어쿼리 */
+@media (max-width: 640px){
+  .day-nav .container{
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .day-nav a{
+    font-size: .85rem;
+    padding: .32rem .55rem;
+    margin: .1rem 0;
+  }
+   .photo{ padding: .75rem; border-radius: 1.2rem; }
+   .photo img{ border-radius: .9rem; }
+}
